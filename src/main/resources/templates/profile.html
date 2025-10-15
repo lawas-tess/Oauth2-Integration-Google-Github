@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>User Profile</title>
+</head>
+<body style="font-family: Arial, sans-serif; background: linear-gradient(135deg, #0f172a, #1e293b 40%, #0b1020); color: #e5e7eb; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; margin: 0; padding: 40px 20px;">
+
+<h1 style="font-size: 28px; margin-bottom: 24px; text-align: center;">User Profile</h1>
+
+<div style="max-width: 800px; width: 100%; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); backdrop-filter: blur(10px);">
+
+    <div class="profile" style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+        <div>
+            <img th:if="${picture != null}" th:src="${picture}" alt="User Picture"
+                 style="width: 150px; height: 150px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 20px rgba(0,0,0,0.4);" />
+            <div th:if="${picture == null}"
+                 style="width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 14px; font-style: italic;">
+                No Image
+            </div>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <p style="margin: 6px 0; font-size: 16px;"><strong>Name:</strong> <span th:text="${name}"></span></p>
+            <p style="margin: 6px 0; font-size: 16px;"><strong>Email:</strong> <span th:text="${email}"></span></p>
+        </div>
+    </div>
+
+    <form th:action="@{/profile}" method="post" style="margin-top: 1.5rem;">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+        <label style="display: block; margin-top: 0.75rem; font-weight: bold;">Display Name:</label>
+        <input type="text" name="displayName" th:value="${displayName}" required
+               style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #e5e7eb; margin-top: 4px;" />
+
+        <label style="display: block; margin-top: 1rem; font-weight: bold;">Bio:</label>
+        <textarea name="bio" rows="4" cols="50" th:text="${bio}"
+                  style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #e5e7eb; resize: none; margin-top: 4px;"></textarea>
+
+        <button type="submit"
+                style="margin-top: 1rem; padding: 10px 18px; border: none; border-radius: 8px; background: linear-gradient(135deg, #2b6cb0, #2c78ce); color: #ffffff; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.2s ease;">
+            Update Profile
+        </button>
+    </form>
+
+    <p style="margin-top: 1.5rem; text-align: center;">
+        <a th:href="@{/logout}" style="color: #60a5fa; text-decoration: none; font-weight: bold;">Logout</a>
+    </p>
+</div>
+</body>
+</html>

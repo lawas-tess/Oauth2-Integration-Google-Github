@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth2 Login</title>
+</head>
+<body style="font-family: Arial, sans-serif; background: linear-gradient(135deg, #0f172a, #1e293b 40%, #0b1020); color: #e5e7eb; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+<div style="max-width: 600px; width: 90%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 40px 30px; text-align: center; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+    <h1 style="margin-bottom: 10px; font-size: 26px;">Welcome to OAuth2 Integration Demo</h1>
+    <p style="color: #cbd5e1; margin-bottom: 25px;">Login with:</p>
+
+    <a class="button" href="/oauth2/authorization/google"
+       style="display: inline-block; min-width: 220px; padding: 12px 18px; margin: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; background: linear-gradient(135deg, #ffffff, #e6f4ff); color: #0b1020; box-shadow: 0 8px 20px rgba(15,23,42,0.25), inset 0 1px 0 rgba(255,255,255,0.6); transition: all 0.2s ease;">
+        Login with Google
+    </a>
+
+    <a class="button" href="/oauth2/authorization/github"
+       style="display: inline-block; min-width: 220px; padding: 12px 18px; margin: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; background: linear-gradient(135deg, #111827, #0b1220); color: #e5e7eb; box-shadow: 0 8px 20px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08); transition: all 0.2s ease;">
+        Login with GitHub
+    </a>
+
+    <p style="margin-top: 18px; color: #94a3b8; font-size: 12px;">Tip: Press Tab to focus the buttons; they have a visible focus ring.</p>
+</div>
+</body>
+</html>
