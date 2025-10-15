@@ -9,21 +9,18 @@ Google Cloud Console account
 GitHub OAuth App
 
 Setup
-1.
- Clone this repo
+1. Clone this repo
 bash
 git clone https://github.com/lawas-tess/Oauth2-Integration-Google-Github.git
 cd Oauth2-Integration-Google-Github
 
-2.
- Create Google and GitHub OAuth apps
+2.Create Google and GitHub OAuth apps
 Google:
 Go to Google Cloud Console, create OAuth credentials, and get your client ID and secret.
 GitHub:
 Go to GitHub Settings > Developer settings > OAuth Apps, register a new app, and copy your client ID and secret.
 
-3.
- Configure your application.properties or application.yml
+3. Configure your application.properties or application.yml
 Add your Google/GitHub client ID and secret:
 text
 spring.security.oauth2.client.registration.google.client-id=YOUR_GOOGLE_CLIENT_ID
